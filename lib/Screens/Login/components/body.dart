@@ -5,7 +5,7 @@ import 'package:eBindalwasmin/components/already_have_an_account_acheck.dart';
 import 'package:eBindalwasmin/components/rounded_button.dart';
 import 'package:eBindalwasmin/components/rounded_input_field.dart';
 import 'package:eBindalwasmin/components/rounded_password_field.dart';
-import 'package:eBindalwasmin/Screens/Beranda/home.dart';
+import 'package:eBindalwasmin/Screens/Beranda/home3.dart';
 
 class Body extends StatelessWidget {
   const Body({
