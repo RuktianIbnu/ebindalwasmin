@@ -67,7 +67,6 @@ class _EntryPnbpState extends State<EntryPnbp> {
                 ],
               ),
               new Container(
-                height: 20,
                 width: sizewidth,
                 decoration: BoxDecoration(color: Colors.blue[200]),
                 padding: EdgeInsets.only(left: 5),
@@ -358,7 +357,6 @@ class _EntryPnbpState extends State<EntryPnbp> {
                 ],
               ),
               new Container(
-                height: 20,
                 width: sizewidth,
                 decoration: BoxDecoration(color: Colors.blue[200]),
                 padding: EdgeInsets.only(left: 5),
@@ -402,7 +400,6 @@ class _EntryPnbpState extends State<EntryPnbp> {
                 ],
               ),
               new Container(
-                height: 40,
                 width: sizewidth,
                 decoration: BoxDecoration(color: Colors.blue[200]),
                 padding: EdgeInsets.only(left: 5),
@@ -541,7 +538,6 @@ class _EntryPnbpState extends State<EntryPnbp> {
                 ],
               ),
               new Container(
-                height: 20,
                 width: sizewidth,
                 decoration: BoxDecoration(color: Colors.blue[200]),
                 padding: EdgeInsets.only(left: 5),

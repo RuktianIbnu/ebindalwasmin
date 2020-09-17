@@ -65,7 +65,6 @@ class _EntryVisaState extends State<EntryVisa> {
                 ],
               ),
               new Container(
-                height: 20,
                 width: sizewidth,
                 decoration: BoxDecoration(color: Colors.blue[200]),
                 padding: EdgeInsets.only(left: 5),
@@ -200,7 +199,6 @@ class _EntryVisaState extends State<EntryVisa> {
                 ],
               ),
               new Container(
-                height: 20,
                 width: sizewidth,
                 decoration: BoxDecoration(color: Colors.blue[200]),
                 padding: EdgeInsets.only(left: 5),
@@ -296,7 +294,6 @@ class _EntryVisaState extends State<EntryVisa> {
                 ],
               ),
               new Container(
-                height: 20,
                 width: sizewidth,
                 decoration: BoxDecoration(color: Colors.blue[200]),
                 padding: EdgeInsets.only(left: 5),
