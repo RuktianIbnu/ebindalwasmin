@@ -161,232 +161,239 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.purple,
       ),
       drawer: DrawerPage(),
-      body: ListView(
-        padding: EdgeInsets.all(4.0),
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Jumlah pemohon paspor periode Januari s.d bulan saat terkini',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                ),
-                Expanded(
-                  child: charts.PieChart(
-                    _seriesPieData,
-                    animate: true,
-                    animationDuration: Duration(seconds: 0),
-                    behaviors: [
-                      new charts.DatumLegend(
-                        outsideJustification:
-                            charts.OutsideJustification.endDrawArea,
-                        horizontalFirst: false,
-                        desiredMaxRows: 2,
-                        cellPadding:
-                            new EdgeInsets.only(right: 4.0, bottom: 4.0),
-                        entryTextStyle: charts.TextStyleSpec(
-                          color: charts.MaterialPalette.purple.shadeDefault,
-                          fontFamily: 'Georgia',
-                          fontSize: 11,
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        padding: new EdgeInsets.only(top: 20, left: 10, bottom: 20, right: 10),
+        decoration: new BoxDecoration(color: Colors.blueGrey[50]),
+        child: ListView(
+          padding: EdgeInsets.all(4.0),
+          children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Jumlah pemohon paspor periode Januari s.d bulan saat terkini',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                  ),
+                  Expanded(
+                    child: charts.PieChart(
+                      _seriesPieData,
+                      animate: true,
+                      animationDuration: Duration(seconds: 0),
+                      behaviors: [
+                        new charts.DatumLegend(
+                          outsideJustification:
+                              charts.OutsideJustification.endDrawArea,
+                          horizontalFirst: false,
+                          desiredMaxRows: 2,
+                          cellPadding:
+                              new EdgeInsets.only(right: 4.0, bottom: 4.0),
+                          entryTextStyle: charts.TextStyleSpec(
+                            color: charts.MaterialPalette.purple.shadeDefault,
+                            fontFamily: 'Georgia',
+                            fontSize: 11,
+                          ),
                         ),
-                      ),
-                    ],
-                    defaultRenderer: new charts.ArcRendererConfig(
-                      arcWidth: 50,
-                      arcRendererDecorators: [
-                        new charts.ArcLabelDecorator(
-                          labelPosition: charts.ArcLabelPosition.inside,
-                        )
                       ],
+                      defaultRenderer: new charts.ArcRendererConfig(
+                        arcWidth: 50,
+                        arcRendererDecorators: [
+                          new charts.ArcLabelDecorator(
+                            labelPosition: charts.ArcLabelPosition.inside,
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Text(
-                  'Jumlah pemohon paspor periode Januari s.d bulan saat terkini',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                ),
-                Expanded(
-                  child: charts.PieChart(
-                    _seriesPieData,
-                    animate: true,
-                    animationDuration: Duration(seconds: 0),
-                    behaviors: [
-                      new charts.DatumLegend(
-                        outsideJustification:
-                            charts.OutsideJustification.endDrawArea,
-                        horizontalFirst: false,
-                        desiredMaxRows: 2,
-                        cellPadding:
-                            new EdgeInsets.only(right: 4.0, bottom: 4.0),
-                        entryTextStyle: charts.TextStyleSpec(
-                          color: charts.MaterialPalette.purple.shadeDefault,
-                          fontFamily: 'Georgia',
-                          fontSize: 11,
+                  Text(
+                    'Jumlah pemohon paspor periode Januari s.d bulan saat terkini',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                  ),
+                  Expanded(
+                    child: charts.PieChart(
+                      _seriesPieData,
+                      animate: true,
+                      animationDuration: Duration(seconds: 0),
+                      behaviors: [
+                        new charts.DatumLegend(
+                          outsideJustification:
+                              charts.OutsideJustification.endDrawArea,
+                          horizontalFirst: false,
+                          desiredMaxRows: 2,
+                          cellPadding:
+                              new EdgeInsets.only(right: 4.0, bottom: 4.0),
+                          entryTextStyle: charts.TextStyleSpec(
+                            color: charts.MaterialPalette.purple.shadeDefault,
+                            fontFamily: 'Georgia',
+                            fontSize: 11,
+                          ),
                         ),
-                      ),
-                    ],
-                    defaultRenderer: new charts.ArcRendererConfig(
-                      arcWidth: 50,
-                      arcRendererDecorators: [
-                        new charts.ArcLabelDecorator(
-                          labelPosition: charts.ArcLabelPosition.inside,
-                        )
                       ],
+                      defaultRenderer: new charts.ArcRendererConfig(
+                        arcWidth: 50,
+                        arcRendererDecorators: [
+                          new charts.ArcLabelDecorator(
+                            labelPosition: charts.ArcLabelPosition.inside,
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Divider(),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              children: <Widget>[
-                Text('Dokumen Paspor RI'),
-                Expanded(
-                  child: charts.BarChart(
-                    _seriesData,
-                    animate: true,
-                    barGroupingType: charts.BarGroupingType.grouped,
-                    animationDuration: Duration(seconds: 0),
-                  ),
-                ),
-                Text(
-                  'Jumlah pemohon paspor periode Januari s.d bulan saat terkini',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                ),
-                Expanded(
-                  child: charts.PieChart(
-                    _seriesPieData,
-                    animate: true,
-                    animationDuration: Duration(seconds: 0),
-                    behaviors: [
-                      new charts.DatumLegend(
-                        outsideJustification:
-                            charts.OutsideJustification.endDrawArea,
-                        horizontalFirst: false,
-                        desiredMaxRows: 2,
-                        cellPadding:
-                            new EdgeInsets.only(right: 4.0, bottom: 4.0),
-                        entryTextStyle: charts.TextStyleSpec(
-                          color: charts.MaterialPalette.purple.shadeDefault,
-                          fontFamily: 'Georgia',
-                          fontSize: 11,
-                        ),
-                      ),
-                    ],
-                    defaultRenderer: new charts.ArcRendererConfig(
-                      arcWidth: 50,
-                      arcRendererDecorators: [
-                        new charts.ArcLabelDecorator(
-                          labelPosition: charts.ArcLabelPosition.inside,
-                        )
-                      ],
+            Divider(),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                children: <Widget>[
+                  Text('Dokumen Paspor RI'),
+                  Expanded(
+                    child: charts.BarChart(
+                      _seriesData,
+                      animate: true,
+                      barGroupingType: charts.BarGroupingType.grouped,
+                      animationDuration: Duration(seconds: 0),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Divider(),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Jumlah pemohon paspor periode Januari s.d bulan saat terkini',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
+                  Text(
+                    'Jumlah pemohon paspor periode Januari s.d bulan saat terkini',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                   ),
-                ),
-                Expanded(
-                  child: charts.PieChart(
-                    _seriesPieData,
-                    animate: true,
-                    animationDuration: Duration(milliseconds: 3),
-                    behaviors: [
-                      new charts.DatumLegend(
-                        outsideJustification:
-                            charts.OutsideJustification.endDrawArea,
-                        horizontalFirst: false,
-                        desiredMaxRows: 2,
-                        cellPadding:
-                            new EdgeInsets.only(right: 4.0, bottom: 4.0),
-                        entryTextStyle: charts.TextStyleSpec(
-                          color: charts.MaterialPalette.purple.shadeDefault,
-                          fontFamily: 'Georgia',
-                          fontSize: 11,
+                  Expanded(
+                    child: charts.PieChart(
+                      _seriesPieData,
+                      animate: true,
+                      animationDuration: Duration(seconds: 0),
+                      behaviors: [
+                        new charts.DatumLegend(
+                          outsideJustification:
+                              charts.OutsideJustification.endDrawArea,
+                          horizontalFirst: false,
+                          desiredMaxRows: 2,
+                          cellPadding:
+                              new EdgeInsets.only(right: 4.0, bottom: 4.0),
+                          entryTextStyle: charts.TextStyleSpec(
+                            color: charts.MaterialPalette.purple.shadeDefault,
+                            fontFamily: 'Georgia',
+                            fontSize: 11,
+                          ),
                         ),
-                      ),
-                    ],
-                    defaultRenderer: new charts.ArcRendererConfig(
-                      arcWidth: 50,
-                      arcRendererDecorators: [
-                        new charts.ArcLabelDecorator(
-                          labelPosition: charts.ArcLabelPosition.inside,
-                        )
                       ],
+                      defaultRenderer: new charts.ArcRendererConfig(
+                        arcWidth: 50,
+                        arcRendererDecorators: [
+                          new charts.ArcLabelDecorator(
+                            labelPosition: charts.ArcLabelPosition.inside,
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                Divider(),
-                Text('Dokumen Paspor RI'),
-                Expanded(
-                  child: charts.BarChart(
-                    _seriesData,
-                    animate: true,
-                    barGroupingType: charts.BarGroupingType.grouped,
-                    animationDuration: Duration(seconds: 0),
-                  ),
-                ),
-                Divider(),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Column(
-              children: <Widget>[
-                Text(
-                  'Pasport',
-                  style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
-                ),
-                Expanded(
-                  child: charts.LineChart(
-                    _seriesLineData,
-                    defaultRenderer: new charts.LineRendererConfig(
-                        includeArea: true, stacked: true),
-                    animate: true,
-                    animationDuration: Duration(seconds: 0),
-                    behaviors: [
-                      new charts.ChartTitle('Years',
-                          behaviorPosition: charts.BehaviorPosition.bottom,
+            Divider(),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Jumlah pemohon paspor periode Januari s.d bulan saat terkini',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Expanded(
+                    child: charts.PieChart(
+                      _seriesPieData,
+                      animate: true,
+                      animationDuration: Duration(milliseconds: 3),
+                      behaviors: [
+                        new charts.DatumLegend(
+                          outsideJustification:
+                              charts.OutsideJustification.endDrawArea,
+                          horizontalFirst: false,
+                          desiredMaxRows: 2,
+                          cellPadding:
+                              new EdgeInsets.only(right: 4.0, bottom: 4.0),
+                          entryTextStyle: charts.TextStyleSpec(
+                            color: charts.MaterialPalette.purple.shadeDefault,
+                            fontFamily: 'Georgia',
+                            fontSize: 11,
+                          ),
+                        ),
+                      ],
+                      defaultRenderer: new charts.ArcRendererConfig(
+                        arcWidth: 50,
+                        arcRendererDecorators: [
+                          new charts.ArcLabelDecorator(
+                            labelPosition: charts.ArcLabelPosition.inside,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Divider(),
+                  Text('Dokumen Paspor RI'),
+                  Expanded(
+                    child: charts.BarChart(
+                      _seriesData,
+                      animate: true,
+                      barGroupingType: charts.BarGroupingType.grouped,
+                      animationDuration: Duration(seconds: 0),
+                    ),
+                  ),
+                  Divider(),
+                ],
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Pasport',
+                    style:
+                        TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                  ),
+                  Expanded(
+                    child: charts.LineChart(
+                      _seriesLineData,
+                      defaultRenderer: new charts.LineRendererConfig(
+                          includeArea: true, stacked: true),
+                      animate: true,
+                      animationDuration: Duration(seconds: 0),
+                      behaviors: [
+                        new charts.ChartTitle('Years',
+                            behaviorPosition: charts.BehaviorPosition.bottom,
+                            titleOutsideJustification:
+                                charts.OutsideJustification.middleDrawArea),
+                        new charts.ChartTitle('Sales',
+                            behaviorPosition: charts.BehaviorPosition.start,
+                            titleOutsideJustification:
+                                charts.OutsideJustification.middleDrawArea),
+                        new charts.ChartTitle(
+                          'Departments',
+                          behaviorPosition: charts.BehaviorPosition.end,
                           titleOutsideJustification:
-                              charts.OutsideJustification.middleDrawArea),
-                      new charts.ChartTitle('Sales',
-                          behaviorPosition: charts.BehaviorPosition.start,
-                          titleOutsideJustification:
-                              charts.OutsideJustification.middleDrawArea),
-                      new charts.ChartTitle(
-                        'Departments',
-                        behaviorPosition: charts.BehaviorPosition.end,
-                        titleOutsideJustification:
-                            charts.OutsideJustification.middleDrawArea,
-                      )
-                    ],
+                              charts.OutsideJustification.middleDrawArea,
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

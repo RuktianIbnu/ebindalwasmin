@@ -47,198 +47,221 @@ class _EntryPasporState extends State<EntryPaspor> {
       body: new Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: new EdgeInsets.only(top: 0, left: 10, bottom: 20, right: 10),
-        decoration: new BoxDecoration(color: Colors.white),
+        padding: new EdgeInsets.only(top: 20, left: 10, bottom: 20, right: 10),
+        decoration: new BoxDecoration(color: Colors.blueGrey[200]),
         child: SingleChildScrollView(
-          child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('$formatTanggal'),
-                  IconButton(
-                    onPressed: () {
-                      _selectDate(context);
-                    },
-                    icon: Icon(Icons.calendar_today),
+          child: Container(
+            padding:
+                new EdgeInsets.only(top: 0, left: 10, bottom: 20, right: 10),
+            decoration: new BoxDecoration(
+              color: Colors.white,
+              borderRadius: new BorderRadius.circular(20.0),
+            ),
+            child: new Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('$formatTanggal'),
+                    IconButton(
+                      onPressed: () {
+                        _selectDate(context);
+                      },
+                      icon: Icon(Icons.calendar_today),
+                    ),
+                  ],
+                ),
+                new Container(
+                  width: sizewidth,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: new BorderRadius.circular(10.0),
                   ),
-                ],
-              ),
-              new Container(
-                width: sizewidth,
-                decoration: BoxDecoration(color: Colors.blue[200]),
-                padding: EdgeInsets.only(left: 5),
-                margin: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  '1. Paspor Biasa 48 Halarnan',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
+                  padding: EdgeInsets.all(5),
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  child: Text(
+                    '1. Paspor Biasa 48 Halarnan',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              new Row(
-                children: <Widget>[
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Pria',
-                        // border: new OutlineInputBorder(
-                        //   borderRadius: new BorderRadius.circular(20.0),
-                        // ),
+                new Row(
+                  children: <Widget>[
+                    new Flexible(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'Jumlah Pria',
+                          // border: new OutlineInputBorder(
+                          //   borderRadius: new BorderRadius.circular(20.0),
+                          // ),
+                        ),
                       ),
                     ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Pria',
+                    new Flexible(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'Jumlah Pria',
+                        ),
                       ),
                     ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Total',
+                    new Flexible(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Total',
+                        ),
                       ),
                     ),
+                  ],
+                ),
+                new Container(
+                  width: sizewidth,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: new BorderRadius.circular(10.0),
                   ),
-                ],
-              ),
-              new Container(
-                width: sizewidth,
-                decoration: BoxDecoration(color: Colors.blue[200]),
-                padding: EdgeInsets.only(left: 5),
-                margin: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  '2. Paspor Biasa 48 Halaman Elektronik',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
+                  padding: EdgeInsets.all(5),
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  child: Text(
+                    '2. Paspor Biasa 48 Halaman Elektronik',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Pria',
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    new Flexible(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'Jumlah Pria',
+                        ),
                       ),
                     ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Wanita',
+                    new Flexible(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'Jumlah Wanita',
+                        ),
                       ),
                     ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Total',
+                    new Flexible(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Total',
+                        ),
                       ),
                     ),
+                  ],
+                ),
+                new Container(
+                  width: sizewidth,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: new BorderRadius.circular(10.0),
                   ),
-                ],
-              ),
-              new Container(
-                width: sizewidth,
-                decoration: BoxDecoration(color: Colors.blue[200]),
-                padding: EdgeInsets.only(left: 5),
-                margin: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  '3. Surat Perjalanan Laksana Paspor untuk Orang Asing',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
+                  padding: EdgeInsets.all(5),
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  child: Text(
+                    '3. Surat Perjalanan Laksana Paspor untuk Orang Asing',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              new Row(
-                children: <Widget>[
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Pria',
+                new Row(
+                  children: <Widget>[
+                    new Flexible(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'Jumlah Pria',
+                        ),
                       ),
                     ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Wanita',
+                    new Flexible(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'Jumlah Wanita',
+                        ),
                       ),
                     ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Total',
+                    new Flexible(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Total',
+                        ),
                       ),
                     ),
+                  ],
+                ),
+                new Container(
+                  width: sizewidth,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: new BorderRadius.circular(10.0),
                   ),
-                ],
-              ),
-              new Container(
-                width: sizewidth,
-                decoration: BoxDecoration(color: Colors.blue[200]),
-                padding: EdgeInsets.only(left: 5),
-                margin: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  '4. Layanan Percepatan Paspor Selesai Pada Hari yang Sama',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
+                  padding: EdgeInsets.all(5),
+                  margin: EdgeInsets.only(top: 10, bottom: 10),
+                  child: Text(
+                    '4. Layanan Percepatan Paspor Selesai Pada Hari yang Sama',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              new Row(
-                children: <Widget>[
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Pria',
+                new Row(
+                  children: <Widget>[
+                    new Flexible(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'Jumlah Pria',
+                        ),
                       ),
                     ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Wanita',
+                    new Flexible(
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          labelText: 'Jumlah Wanita',
+                        ),
                       ),
                     ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Total',
+                    new Flexible(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Total',
+                        ),
                       ),
                     ),
+                  ],
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 100),
+                  child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      RoundedButton(
+                        text: "Simpan",
+                        press: () {},
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  RoundedButton(
-                    text: "Simpan",
-                    press: () {},
-                  ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
