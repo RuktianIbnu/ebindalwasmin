@@ -1,19 +1,19 @@
+import 'package:eBindalwasmin/Screens/Login/components/background.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:eBindalwasmin/Screens/Beranda/drawerpage.dart';
 import 'package:eBindalwasmin/components/rounded_button.dart';
 
-class EntryPaspor extends StatefulWidget {
-  const EntryPaspor({Key key}) : super(key: key);
+class EntryVisa extends StatefulWidget {
+  const EntryVisa({Key key}) : super(key: key);
 
   @override
-  _EntryPasporState createState() => new _EntryPasporState();
+  _EntryVisaState createState() => new _EntryVisaState();
 }
 
-class _EntryPasporState extends State<EntryPaspor> {
+class _EntryVisaState extends State<EntryVisa> {
   DateTime tanggal = DateTime.now();
-
   @override
   Widget build(BuildContext context) {
     final sizewidth = MediaQuery.of(context).size.width;
@@ -40,7 +40,7 @@ class _EntryPasporState extends State<EntryPaspor> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dokumen Perjalanan Republik Indonesia"),
+        title: Text("Visa"),
         backgroundColor: Colors.purple,
       ),
       drawer: DrawerPage(),
@@ -51,7 +51,6 @@ class _EntryPasporState extends State<EntryPaspor> {
         decoration: new BoxDecoration(color: Colors.white),
         child: SingleChildScrollView(
           child: new Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               new Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -72,9 +71,156 @@ class _EntryPasporState extends State<EntryPaspor> {
                 padding: EdgeInsets.only(left: 5),
                 margin: EdgeInsets.only(top: 10, bottom: 10),
                 child: Text(
-                  '1. Paspor Biasa 48 Halarnan',
+                  '1. Visa Kunjungan',
                   style: TextStyle(
                     fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              new Container(
+                width: sizewidth,
+                padding: EdgeInsets.only(left: 20),
+                child: Text(
+                  'a. Visa Kunjungan Sekali Perjalanan',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  new Flexible(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Pria',
+                        // border: new OutlineInputBorder(
+                        //   borderRadius: new BorderRadius.circular(10.0),
+                        // ),
+                      ),
+                    ),
+                  ),
+                  new Flexible(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Pria',
+                      ),
+                    ),
+                  ),
+                  new Flexible(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Total',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              new Container(
+                width: sizewidth,
+                padding: EdgeInsets.only(left: 20),
+                margin: EdgeInsets.only(top: 10, bottom: 10),
+                child: Text(
+                  'b. Visa Kunjungan Beberapa Kali Perjalanan Dihitung per Tahun',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              new Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  new Flexible(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Pria',
+                      ),
+                    ),
+                  ),
+                  new Flexible(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Wanita',
+                      ),
+                    ),
+                  ),
+                  new Flexible(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Total',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              new Container(
+                width: sizewidth,
+                padding: EdgeInsets.only(left: 20),
+                margin: EdgeInsets.only(top: 10, bottom: 10),
+                child: Text(
+                  'c. Visa Kunjungan Saat Kedatangan',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              new Row(
+                children: <Widget>[
+                  new Flexible(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Pria',
+                      ),
+                    ),
+                  ),
+                  new Flexible(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Wanita',
+                      ),
+                    ),
+                  ),
+                  new Flexible(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Total',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              new Container(
+                height: 20,
+                width: sizewidth,
+                decoration: BoxDecoration(color: Colors.blue[200]),
+                padding: EdgeInsets.only(left: 5),
+                margin: EdgeInsets.only(top: 10, bottom: 10),
+                child: Text(
+                  '2. Visa Tinggal Terbatas',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              new Container(
+                width: sizewidth,
+                padding: EdgeInsets.only(left: 20),
+                margin: EdgeInsets.only(top: 10, bottom: 10),
+                child: Text(
+                  'a. Visa Tinggal Terbatas',
+                  style: TextStyle(
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -110,15 +256,13 @@ class _EntryPasporState extends State<EntryPaspor> {
                 ],
               ),
               new Container(
-                height: 20,
                 width: sizewidth,
-                decoration: BoxDecoration(color: Colors.blue[200]),
-                padding: EdgeInsets.only(left: 5),
+                padding: EdgeInsets.only(left: 20),
                 margin: EdgeInsets.only(top: 10, bottom: 10),
                 child: Text(
-                  '2. Paspor Biasa 48 Halaman Elektronik',
+                  'b. Visa Tinggal Terbatas Saat Kedatangan',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -158,7 +302,7 @@ class _EntryPasporState extends State<EntryPaspor> {
                 padding: EdgeInsets.only(left: 5),
                 margin: EdgeInsets.only(top: 10, bottom: 10),
                 child: Text(
-                  '3. Surat Perjalanan Laksana Paspor untuk Orang Asing',
+                  '3. Persetujuan Visa Direktur Jenderal Imigrasi',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
@@ -172,55 +316,17 @@ class _EntryPasporState extends State<EntryPaspor> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         labelText: 'Jumlah Pria',
+                        // border: new OutlineInputBorder(
+                        //   borderRadius: new BorderRadius.circular(20.0),
+                        // ),
                       ),
                     ),
                   ),
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Wanita',
-                      ),
-                    ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Total',
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              new Container(
-                height: 20,
-                width: sizewidth,
-                decoration: BoxDecoration(color: Colors.blue[200]),
-                padding: EdgeInsets.only(left: 5),
-                margin: EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  '4. Layanan Percepatan Paspor Selesai Pada Hari yang Sama',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              new Row(
-                children: <Widget>[
                   new Flexible(
                     child: TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         labelText: 'Jumlah Pria',
-                      ),
-                    ),
-                  ),
-                  new Flexible(
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                        labelText: 'Jumlah Wanita',
                       ),
                     ),
                   ),
