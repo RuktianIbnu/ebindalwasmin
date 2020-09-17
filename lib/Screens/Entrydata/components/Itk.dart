@@ -4,14 +4,14 @@ import 'package:intl/intl.dart';
 import 'package:eBindalwasmin/Screens/Beranda/drawerpage.dart';
 import 'package:eBindalwasmin/components/rounded_button.dart';
 
-class EntryItap extends StatefulWidget {
-  const EntryItap({Key key}) : super(key: key);
+class EntryItk extends StatefulWidget {
+  const EntryItk({Key key}) : super(key: key);
 
   @override
-  _EntryItapState createState() => new _EntryItapState();
+  _EntryItkState createState() => new _EntryItkState();
 }
 
-class _EntryItapState extends State<EntryItap> {
+class _EntryItkState extends State<EntryItk> {
   DateTime tanggal = DateTime.now();
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class _EntryItapState extends State<EntryItap> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Izin Tinggal Tetap"),
+        title: Text("Izin Tinggal Kunjungan"),
         backgroundColor: Colors.purple,
       ),
       drawer: DrawerPage(),

@@ -4,17 +4,19 @@ import 'package:intl/intl.dart';
 import 'package:eBindalwasmin/Screens/Beranda/drawerpage.dart';
 import 'package:eBindalwasmin/components/rounded_button.dart';
 
-class EntryItap extends StatefulWidget {
-  const EntryItap({Key key}) : super(key: key);
+class EntryPaspor extends StatefulWidget {
+  const EntryPaspor({Key key}) : super(key: key);
 
   @override
-  _EntryItapState createState() => new _EntryItapState();
+  _EntryPasporState createState() => new _EntryPasporState();
 }
 
-class _EntryItapState extends State<EntryItap> {
+class _EntryPasporState extends State<EntryPaspor> {
   DateTime tanggal = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     String formatTanggal = new DateFormat.yMMMd().format(tanggal);
 
     Future<Null> _selectDate(BuildContext context) async {
@@ -38,7 +40,7 @@ class _EntryItapState extends State<EntryItap> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Izin Tinggal Tetap"),
+        title: Text("Dokumen Perjalanan Republik Indonesia"),
         backgroundColor: Colors.purple,
       ),
       drawer: DrawerPage(),
@@ -133,7 +135,39 @@ class _EntryItapState extends State<EntryItap> {
               ),
               Divider(),
               Text(
-                '3. Layanan Percepatan Paspor Pada Hari Yang Sama',
+                '3. Surat Perjalanan Laksana Paspor untuk Orang Asing',
+                style: TextStyle(fontSize: 14),
+              ),
+              new Row(
+                children: <Widget>[
+                  new Flexible(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Pria',
+                      ),
+                    ),
+                  ),
+                  new Flexible(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                        labelText: 'Jumlah Wanita',
+                      ),
+                    ),
+                  ),
+                  new Flexible(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Total',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              Text(
+                '4. Layanan Percepatan Paspor Selesai Pada Hari yang Sama',
                 style: TextStyle(fontSize: 14),
               ),
               new Row(

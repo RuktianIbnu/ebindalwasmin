@@ -309,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                   child: charts.PieChart(
                     _seriesPieData,
                     animate: true,
-                    animationDuration: Duration(seconds: 0),
+                    animationDuration: Duration(milliseconds: 3),
                     behaviors: [
                       new charts.DatumLegend(
                         outsideJustification:
