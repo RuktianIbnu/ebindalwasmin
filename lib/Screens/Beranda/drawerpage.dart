@@ -1,4 +1,4 @@
-import 'package:eBindalwasmin/Screens/Beranda/home.dart';
+import 'package:eBindalwasmin/Screens/Beranda/home3.dart';
 import 'package:eBindalwasmin/Screens/Report/laporan.dart';
 import 'package:flutter/material.dart';
 import 'package:eBindalwasmin/Screens/EntryData/components/Paspor.dart';
