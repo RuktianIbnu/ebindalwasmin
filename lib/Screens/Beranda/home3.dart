@@ -164,7 +164,6 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: new EdgeInsets.only(top: 20, left: 10, bottom: 20, right: 10),
         decoration: new BoxDecoration(color: Colors.blueGrey[50]),
         child: ListView(
           padding: EdgeInsets.all(4.0),
