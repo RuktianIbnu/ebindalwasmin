@@ -1,7 +1,7 @@
 import 'package:eBindalwasmin/Screens/Beranda/home3.dart';
 import 'package:eBindalwasmin/Screens/Report/laporan.dart';
 import 'package:flutter/material.dart';
-import 'package:eBindalwasmin/Screens/EntryData/components/Paspor.dart';
+import 'package:eBindalwasmin/Screens/Entrydata/components/paspor.dart';
 import 'package:eBindalwasmin/Screens/Entrydata/components/visa.dart';
 import 'package:eBindalwasmin/Screens/Entrydata/components/intal.dart';
 import 'package:eBindalwasmin/Screens/Entrydata/components/pnbp.dart';
