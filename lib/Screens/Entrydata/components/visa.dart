@@ -1,4 +1,5 @@
 // import 'package:eBindalwasmin/Screens/Login/components/background.dart';
+import 'package:eBindalwasmin/Screens/Beranda/home3.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -86,204 +87,241 @@ class _EntryVisaState extends State<EntryVisa> {
       }
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Visa"),
-        backgroundColor: Colors.purple,
-      ),
-      drawer: DrawerPage(),
-      body: new Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: new EdgeInsets.only(top: 20, left: 10, bottom: 20, right: 10),
-        decoration: new BoxDecoration(color: Colors.blueGrey[200]),
-        child: SingleChildScrollView(
-          child: Container(
-            padding:
-                new EdgeInsets.only(top: 0, left: 10, bottom: 20, right: 10),
-            decoration: new BoxDecoration(
-              color: Colors.white,
-              borderRadius: new BorderRadius.circular(20.0),
-            ),
-            child: new Column(
-              children: [
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text('$formatTanggal'),
-                    IconButton(
-                      onPressed: () {
-                        _selectDate(context);
-                      },
-                      icon: Icon(Icons.calendar_today),
-                    ),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: new BorderRadius.circular(10.0),
-                  ),
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    '1. Visa Kunjungan',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text(
-                    'a. Visa Kunjungan Sekali Perjalanan',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria1a()),
-                    new Flexible(child: _buildTextFieldWanita1a()),
-                    new Flexible(child: _buildTextFieldTotal1a()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'b. Visa Kunjungan Beberapa Kali Perjalanan Dihitung per Tahun',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria1b()),
-                    new Flexible(child: _buildTextFieldWanita1b()),
-                    new Flexible(child: _buildTextFieldTotal1b()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'c. Visa Kunjungan Saat Kedatangan',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria1c()),
-                    new Flexible(child: _buildTextFieldWanita1c()),
-                    new Flexible(child: _buildTextFieldTotal1c()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: new BorderRadius.circular(10.0),
-                  ),
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    '2. Visa Tinggal Terbatas',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'a. Visa Tinggal Terbatas',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2a()),
-                    new Flexible(child: _buildTextFieldWanita2a()),
-                    new Flexible(child: _buildTextFieldTotal2a()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'b. Visa Tinggal Terbatas Saat Kedatangan',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2b()),
-                    new Flexible(child: _buildTextFieldWanita2b()),
-                    new Flexible(child: _buildTextFieldTotal2b()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: new BorderRadius.circular(10.0),
-                  ),
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    '3. Persetujuan Visa Direktur Jenderal Imigrasi',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria3()),
-                    new Flexible(child: _buildTextFieldWanita3()),
-                    new Flexible(child: _buildTextFieldTotal3()),
-                  ],
-                ),
-                Container(
-                  padding: EdgeInsets.only(top: 100),
-                  child: new Row(
+    Future<bool> onBackButton(context) async {
+      // tampilkan dialog saat user menekan tombol back
+      // jika ditekan ok maka akan kembali ke halaman sebelumnya
+      return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Kembali Ke Beranda'),
+            content: Text('Yakin kembali ke beranda?'),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  // tutup modal dan halaman ini
+                  Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                      builder: (BuildContext context) => HomePage()));
+                },
+                child: Text('Beranda'),
+              ),
+              FlatButton(
+                onPressed: () {
+                  // tutup modal saja
+                  Navigator.of(context).pop(false);
+                },
+                child: Text('Tidak'),
+              )
+            ],
+          );
+        },
+      );
+    }
+
+    return WillPopScope(
+      onWillPop: () {
+        return onBackButton(context);
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Visa"),
+          backgroundColor: Colors.purple,
+        ),
+        drawer: DrawerPage(),
+        body: new Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          padding:
+              new EdgeInsets.only(top: 20, left: 10, bottom: 20, right: 10),
+          decoration: new BoxDecoration(color: Colors.blueGrey[200]),
+          child: SingleChildScrollView(
+            child: Container(
+              padding:
+                  new EdgeInsets.only(top: 0, left: 10, bottom: 20, right: 10),
+              decoration: new BoxDecoration(
+                color: Colors.white,
+                borderRadius: new BorderRadius.circular(20.0),
+              ),
+              child: new Column(
+                children: [
+                  new Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      RoundedButton(
-                        text: "Simpan",
-                        press: () {},
+                    children: <Widget>[
+                      Text('$formatTanggal'),
+                      IconButton(
+                        onPressed: () {
+                          _selectDate(context);
+                        },
+                        icon: Icon(Icons.calendar_today),
                       ),
                     ],
                   ),
-                ),
-              ],
+                  new Container(
+                    width: sizewidth,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      '1. Visa Kunjungan',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text(
+                      'a. Visa Kunjungan Sekali Perjalanan',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria1a()),
+                      new Flexible(child: _buildTextFieldWanita1a()),
+                      new Flexible(child: _buildTextFieldTotal1a()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'b. Visa Kunjungan Beberapa Kali Perjalanan Dihitung per Tahun',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria1b()),
+                      new Flexible(child: _buildTextFieldWanita1b()),
+                      new Flexible(child: _buildTextFieldTotal1b()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'c. Visa Kunjungan Saat Kedatangan',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria1c()),
+                      new Flexible(child: _buildTextFieldWanita1c()),
+                      new Flexible(child: _buildTextFieldTotal1c()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      '2. Visa Tinggal Terbatas',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'a. Visa Tinggal Terbatas',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2a()),
+                      new Flexible(child: _buildTextFieldWanita2a()),
+                      new Flexible(child: _buildTextFieldTotal2a()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'b. Visa Tinggal Terbatas Saat Kedatangan',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2b()),
+                      new Flexible(child: _buildTextFieldWanita2b()),
+                      new Flexible(child: _buildTextFieldTotal2b()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      '3. Persetujuan Visa Direktur Jenderal Imigrasi',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria3()),
+                      new Flexible(child: _buildTextFieldWanita3()),
+                      new Flexible(child: _buildTextFieldTotal3()),
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 100),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RoundedButton(
+                          text: "Simpan",
+                          press: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

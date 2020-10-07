@@ -43,11 +43,8 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "LOGIN",
               press: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return HomePage();
-                  },
-                ));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
               },
             ),
             SizedBox(height: size.height * 0.03),

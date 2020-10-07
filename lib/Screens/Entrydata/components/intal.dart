@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:eBindalwasmin/Screens/Beranda/drawerpage.dart';
 import 'package:eBindalwasmin/components/rounded_button.dart';
+import 'package:eBindalwasmin/Screens/Beranda/home3.dart';
 
 class EntryIntal extends StatefulWidget {
   const EntryIntal({Key key}) : super(key: key);
@@ -29,7 +30,7 @@ class _EntryIntalState extends State<EntryIntal> {
   TextEditingController _ctrlPria1b = TextEditingController();
   TextEditingController _ctrlWanita1b = TextEditingController();
   TextEditingController _ctrlTotal1b = TextEditingController();
-  
+
   final int intal1c = 100000;
   int pria1c;
   int wanita1c;
@@ -54,7 +55,7 @@ class _EntryIntalState extends State<EntryIntal> {
   TextEditingController _ctrlPria2b = TextEditingController();
   TextEditingController _ctrlWanita2b = TextEditingController();
   TextEditingController _ctrlTotal2b = TextEditingController();
-  
+
   final int intal2c = 100000;
   int pria2c;
   int wanita2c;
@@ -78,7 +79,7 @@ class _EntryIntalState extends State<EntryIntal> {
   TextEditingController _ctrlPria2e = TextEditingController();
   TextEditingController _ctrlWanita2e = TextEditingController();
   TextEditingController _ctrlTotal2e = TextEditingController();
-  
+
   final int intal2f = 100000;
   int pria2f;
   int wanita2f;
@@ -111,7 +112,7 @@ class _EntryIntalState extends State<EntryIntal> {
   TextEditingController _ctrlPria3b = TextEditingController();
   TextEditingController _ctrlWanita3b = TextEditingController();
   TextEditingController _ctrlTotal3b = TextEditingController();
-  
+
   final int intal3c = 100000;
   int pria3c;
   int wanita3c;
@@ -136,7 +137,7 @@ class _EntryIntalState extends State<EntryIntal> {
   TextEditingController _ctrlPria4b = TextEditingController();
   TextEditingController _ctrlWanita4b = TextEditingController();
   TextEditingController _ctrlTotal4b = TextEditingController();
-  
+
   final int intal4c = 100000;
   int pria4c;
   int wanita4c;
@@ -178,449 +179,486 @@ class _EntryIntalState extends State<EntryIntal> {
       }
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Izin Tinggal Terbatas"),
-        backgroundColor: Colors.purple,
-      ),
-      drawer: DrawerPage(),
-      body: new Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        padding: new EdgeInsets.only(top: 20, left: 10, bottom: 20, right: 10),
-        decoration: new BoxDecoration(color: Colors.blueGrey[200]),
-        child: SingleChildScrollView(
-          child: Container(
-            padding:
-                new EdgeInsets.only(top: 0, left: 10, bottom: 20, right: 10),
-            decoration: new BoxDecoration(
-              color: Colors.white,
-              borderRadius: new BorderRadius.circular(20.0),
-            ),
-            child: new Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text('$formatTanggal'),
-                    IconButton(
-                      onPressed: () {
-                        _selectDate(context);
-                      },
-                      icon: Icon(Icons.calendar_today),
-                    ),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: new BorderRadius.circular(10.0),
-                  ),
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    '1. Izin Kunjungan',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text(
-                    'a. Pemberian Izin Kunjungan Masa Berlaku 30 hari',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria1a()),
-                    new Flexible(child: _buildTextFieldWanita1a()),
-                    new Flexible(child: _buildTextFieldTotal1a()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'b. Perpanjangan Izin Kunjungan Masa Berlaku 30 hari',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria1b()),
-                    new Flexible(child: _buildTextFieldWanita1b()),
-                    new Flexible(child: _buildTextFieldTotal1b()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'c. Perpanjangan Izin Kunjungan Masa Berlaku 60 hari',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria1c()),
-                    new Flexible(child: _buildTextFieldWanita1c()),
-                    new Flexible(child: _buildTextFieldTotal1c()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: new BorderRadius.circular(10.0),
-                  ),
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    '2. Izin Tinggal Terbatas',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'a. Izin Tinggal Terbatas Saat Kedatangan',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2a()),
-                    new Flexible(child: _buildTextFieldWanita2a()),
-                    new Flexible(child: _buildTextFieldTotal2a()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'b. Izin Tinggal Terbatas Masa Berlaku Paling Lama 6 (Enam) Bulan',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2b()),
-                    new Flexible(child: _buildTextFieldWanita2b()),
-                    new Flexible(child: _buildTextFieldTotal2b()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'c. Izin Tinggal Terbatas Masa Berlaku Paling Lama 1 (Satu) Tahun',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2c()),
-                    new Flexible(child: _buildTextFieldWanita2c()),
-                    new Flexible(child: _buildTextFieldTotal2c()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'd. Izin Tinggal Terbatas Masa Berlaku Paling Lama 2 (Dua) Tahun',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2d()),
-                    new Flexible(child: _buildTextFieldWanita2d()),
-                    new Flexible(child: _buildTextFieldTotal2d()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'e. Izin Tinggal Terbatas Khusus Masa Berlaku Paling Lama 5 (lima) Tahun Khusus pada Kawasan Ekonomi Khusus (KEK)',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2e()),
-                    new Flexible(child: _buildTextFieldWanita2e()),
-                    new Flexible(child: _buildTextFieldTotal2e()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'f. Persetujuan Izin Tinggal Terbatas Untuk Pekerja di Perairan Indonesia',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2f()),
-                    new Flexible(child: _buildTextFieldWanita2f()),
-                    new Flexible(child: _buildTextFieldTotal2f()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'g. Teraan Izin Tinggal Terbatas Untuk Pekerja di Perairan Indonesia',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria2g()),
-                    new Flexible(child: _buildTextFieldWanita2g()),
-                    new Flexible(child: _buildTextFieldTotal2g()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: new BorderRadius.circular(10.0),
-                  ),
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    '3. Izin Tinggal Tetap',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text(
-                    'a. Pemberian Izin Tinggal Tetap Masa Berlaku 5 (Lima) Tahun',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria3a()),
-                    new Flexible(child: _buildTextFieldWanita3a()),
-                    new Flexible(child: _buildTextFieldTotal3a()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'b. Perpanjangan Izin Tinggal Tetap Masa Berlaku 5 (Lima) Tahun',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria3b()),
-                    new Flexible(child: _buildTextFieldWanita3b()),
-                    new Flexible(child: _buildTextFieldTotal3b()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'c. Perpanjangan Izin Tinggal Tetap untuk Jangka Waktu yang Tidak Terbatas',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria3c()),
-                    new Flexible(child: _buildTextFieldWanita3c()),
-                    new Flexible(child: _buildTextFieldTotal3c()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    borderRadius: new BorderRadius.circular(10.0),
-                  ),
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    '4. Izin Masuk Kembali (Re-Entry Permit)',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text(
-                    'a. Izin Masuk Kembali Masa Berlaku Paling Lama 6 (Enam) Bulan',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria4a()),
-                    new Flexible(child: _buildTextFieldWanita4a()),
-                    new Flexible(child: _buildTextFieldTotal4a()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'b. Izin Masuk Kembali Masa Berlaku Paling Lama 1 (Satu) Tahun',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria4b()),
-                    new Flexible(child: _buildTextFieldWanita4b()),
-                    new Flexible(child: _buildTextFieldTotal4b()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'c. Izin Masuk Kembali Masa Berlaku Paling Lama 2 (Dua) Tahun',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria4c()),
-                    new Flexible(child: _buildTextFieldWanita4c()),
-                    new Flexible(child: _buildTextFieldTotal4c()),
-                  ],
-                ),
-                new Container(
-                  width: sizewidth,
-                  padding: EdgeInsets.only(left: 20),
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: Text(
-                    'd. Izin Masuk Kembali Masa Berlaku 5 (Lima) Tahun Khusus pada Kawasan Ekonomi Khusus (KEK)',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                new Row(
-                  children: <Widget>[
-                    new Flexible(child: _buildTextFieldPria4d()),
-                    new Flexible(child: _buildTextFieldWanita4d()),
-                    new Flexible(child: _buildTextFieldTotal4d()),
-                  ],
-                ),
-                Container(
-                  padding: EdgeInsets.only(top: 100),
-                  child: new Row(
+    Future<bool> onBackButton(context) async {
+      // tampilkan dialog saat user menekan tombol back
+      // jika ditekan ok maka akan kembali ke halaman sebelumnya
+      return showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text('Kembali Ke Beranda'),
+            content: Text('Yakin kembali ke beranda?'),
+            actions: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  // tutup modal dan halaman ini
+                  Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                      builder: (BuildContext context) => HomePage()));
+                },
+                child: Text('Beranda'),
+              ),
+              FlatButton(
+                onPressed: () {
+                  // tutup modal saja
+                  Navigator.of(context).pop(false);
+                },
+                child: Text('Tidak'),
+              )
+            ],
+          );
+        },
+      );
+    }
+
+    return WillPopScope(
+      onWillPop: () {
+        return onBackButton(context);
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Izin Tinggal Terbatas"),
+          backgroundColor: Colors.purple,
+        ),
+        drawer: DrawerPage(),
+        body: new Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          padding:
+              new EdgeInsets.only(top: 20, left: 10, bottom: 20, right: 10),
+          decoration: new BoxDecoration(color: Colors.blueGrey[200]),
+          child: SingleChildScrollView(
+            child: Container(
+              padding:
+                  new EdgeInsets.only(top: 0, left: 10, bottom: 20, right: 10),
+              decoration: new BoxDecoration(
+                color: Colors.white,
+                borderRadius: new BorderRadius.circular(20.0),
+              ),
+              child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  new Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      RoundedButton(
-                        text: "Simpan",
-                        press: () {},
+                    children: <Widget>[
+                      Text('$formatTanggal'),
+                      IconButton(
+                        onPressed: () {
+                          _selectDate(context);
+                        },
+                        icon: Icon(Icons.calendar_today),
                       ),
                     ],
                   ),
-                ),
-              ],
+                  new Container(
+                    width: sizewidth,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      '1. Izin Kunjungan',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text(
+                      'a. Pemberian Izin Kunjungan Masa Berlaku 30 hari',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria1a()),
+                      new Flexible(child: _buildTextFieldWanita1a()),
+                      new Flexible(child: _buildTextFieldTotal1a()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'b. Perpanjangan Izin Kunjungan Masa Berlaku 30 hari',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria1b()),
+                      new Flexible(child: _buildTextFieldWanita1b()),
+                      new Flexible(child: _buildTextFieldTotal1b()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'c. Perpanjangan Izin Kunjungan Masa Berlaku 60 hari',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria1c()),
+                      new Flexible(child: _buildTextFieldWanita1c()),
+                      new Flexible(child: _buildTextFieldTotal1c()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      '2. Izin Tinggal Terbatas',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'a. Izin Tinggal Terbatas Saat Kedatangan',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2a()),
+                      new Flexible(child: _buildTextFieldWanita2a()),
+                      new Flexible(child: _buildTextFieldTotal2a()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'b. Izin Tinggal Terbatas Masa Berlaku Paling Lama 6 (Enam) Bulan',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2b()),
+                      new Flexible(child: _buildTextFieldWanita2b()),
+                      new Flexible(child: _buildTextFieldTotal2b()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'c. Izin Tinggal Terbatas Masa Berlaku Paling Lama 1 (Satu) Tahun',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2c()),
+                      new Flexible(child: _buildTextFieldWanita2c()),
+                      new Flexible(child: _buildTextFieldTotal2c()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'd. Izin Tinggal Terbatas Masa Berlaku Paling Lama 2 (Dua) Tahun',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2d()),
+                      new Flexible(child: _buildTextFieldWanita2d()),
+                      new Flexible(child: _buildTextFieldTotal2d()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'e. Izin Tinggal Terbatas Khusus Masa Berlaku Paling Lama 5 (lima) Tahun Khusus pada Kawasan Ekonomi Khusus (KEK)',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2e()),
+                      new Flexible(child: _buildTextFieldWanita2e()),
+                      new Flexible(child: _buildTextFieldTotal2e()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'f. Persetujuan Izin Tinggal Terbatas Untuk Pekerja di Perairan Indonesia',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2f()),
+                      new Flexible(child: _buildTextFieldWanita2f()),
+                      new Flexible(child: _buildTextFieldTotal2f()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'g. Teraan Izin Tinggal Terbatas Untuk Pekerja di Perairan Indonesia',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria2g()),
+                      new Flexible(child: _buildTextFieldWanita2g()),
+                      new Flexible(child: _buildTextFieldTotal2g()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      '3. Izin Tinggal Tetap',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text(
+                      'a. Pemberian Izin Tinggal Tetap Masa Berlaku 5 (Lima) Tahun',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria3a()),
+                      new Flexible(child: _buildTextFieldWanita3a()),
+                      new Flexible(child: _buildTextFieldTotal3a()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'b. Perpanjangan Izin Tinggal Tetap Masa Berlaku 5 (Lima) Tahun',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria3b()),
+                      new Flexible(child: _buildTextFieldWanita3b()),
+                      new Flexible(child: _buildTextFieldTotal3b()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'c. Perpanjangan Izin Tinggal Tetap untuk Jangka Waktu yang Tidak Terbatas',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria3c()),
+                      new Flexible(child: _buildTextFieldWanita3c()),
+                      new Flexible(child: _buildTextFieldTotal3c()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      borderRadius: new BorderRadius.circular(10.0),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      '4. Izin Masuk Kembali (Re-Entry Permit)',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text(
+                      'a. Izin Masuk Kembali Masa Berlaku Paling Lama 6 (Enam) Bulan',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria4a()),
+                      new Flexible(child: _buildTextFieldWanita4a()),
+                      new Flexible(child: _buildTextFieldTotal4a()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'b. Izin Masuk Kembali Masa Berlaku Paling Lama 1 (Satu) Tahun',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria4b()),
+                      new Flexible(child: _buildTextFieldWanita4b()),
+                      new Flexible(child: _buildTextFieldTotal4b()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'c. Izin Masuk Kembali Masa Berlaku Paling Lama 2 (Dua) Tahun',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria4c()),
+                      new Flexible(child: _buildTextFieldWanita4c()),
+                      new Flexible(child: _buildTextFieldTotal4c()),
+                    ],
+                  ),
+                  new Container(
+                    width: sizewidth,
+                    padding: EdgeInsets.only(left: 20),
+                    margin: EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      'd. Izin Masuk Kembali Masa Berlaku 5 (Lima) Tahun Khusus pada Kawasan Ekonomi Khusus (KEK)',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  new Row(
+                    children: <Widget>[
+                      new Flexible(child: _buildTextFieldPria4d()),
+                      new Flexible(child: _buildTextFieldWanita4d()),
+                      new Flexible(child: _buildTextFieldTotal4d()),
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 100),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RoundedButton(
+                          text: "Simpan",
+                          press: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -1090,6 +1128,7 @@ class _EntryIntalState extends State<EntryIntal> {
       enabled: false,
     );
   }
+
   //############################################################
   // 3 #######################################################
   Widget _buildTextFieldPria3a() {
@@ -1229,6 +1268,7 @@ class _EntryIntalState extends State<EntryIntal> {
       enabled: false,
     );
   }
+
   //############################################################
   // 4 #######################################################
   Widget _buildTextFieldPria4a() {

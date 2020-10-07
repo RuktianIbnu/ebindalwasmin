@@ -35,7 +35,8 @@ class _DrawerPageState extends State<DrawerPage> {
               child: Icon(Icons.home),
             ),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) {
                 return HomePage();
               }));
             },
@@ -53,7 +54,7 @@ class _DrawerPageState extends State<DrawerPage> {
                         textAlign: TextAlign.right,
                       ),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
+                        Navigator.pushReplacement(context, MaterialPageRoute(
                           builder: (context) {
                             return EntryPaspor();
                           },
@@ -66,9 +67,7 @@ class _DrawerPageState extends State<DrawerPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) {
-                              return EntryVisa();
-                            },
+                            builder: (context) => EntryVisa(),
                           ),
                         );
                       },
@@ -81,9 +80,7 @@ class _DrawerPageState extends State<DrawerPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) {
-                              return EntryIntal();
-                            },
+                            builder: (context) => EntryIntal(),
                           ),
                         );
                       },
@@ -95,9 +92,7 @@ class _DrawerPageState extends State<DrawerPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) {
-                              return EntryPnbp();
-                            },
+                            builder: (context) => EntryPnbp(),
                           ),
                         );
                       },
@@ -116,7 +111,7 @@ class _DrawerPageState extends State<DrawerPage> {
               child: Icon(Icons.report),
             ),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(
+              Navigator.pushReplacement(context, MaterialPageRoute(
                 builder: (context) {
                   return Laporan();
                 },
